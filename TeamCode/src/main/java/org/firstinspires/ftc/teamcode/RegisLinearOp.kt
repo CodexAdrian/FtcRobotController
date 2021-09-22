@@ -10,6 +10,8 @@ open class RegisLinearOp : LinearOpMode() {
     protected lateinit var rightBackMotor : DcMotor
     protected lateinit var leftFrontMotor : DcMotor
     protected lateinit var leftBackMotor : DcMotor
+    protected lateinit var duckMotor : DcMotor
+    protected lateinit var intakeMotor : DcMotor
 
     private inline fun <reified T> HardwareMap.getType(name: String) = get(T::class.java, name)
 
@@ -18,10 +20,14 @@ open class RegisLinearOp : LinearOpMode() {
         rightBackMotor = hardwareMap.getType("Bottom Right")
         leftFrontMotor = hardwareMap.getType("Top Left")
         leftBackMotor = hardwareMap.getType("Bottom Left")
+        duckMotor = hardwareMap.getType("Duck Motor")
+        intakeMotor = hardwareMap.getType("Intake Motor")
         rightFrontMotor.direction = REVERSE
         rightBackMotor.direction = REVERSE
         leftFrontMotor.direction = FORWARD
         leftBackMotor.direction = FORWARD
+        duckMotor.direction = FORWARD
+        intakeMotor.direction = FORWARD
 
         telemetry.addData("Status", "Initialized")
         telemetry.update()
