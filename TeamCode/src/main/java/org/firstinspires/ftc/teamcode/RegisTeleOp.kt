@@ -14,6 +14,9 @@ class RegisTeleOp : RegisLinearOp() {
             leftFrontMotor.power = thrust
             leftBackMotor.power = thrust
             rightBackMotor.power = thrust
+            duckMotor.power = duck
+            intakeMotor.power = intake
+            
             if (swerve > 0) {
                 leftBackMotor.power *= 1 - swerve
                 leftFrontMotor.power *= 1 - swerve
